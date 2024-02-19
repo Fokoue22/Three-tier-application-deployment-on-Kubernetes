@@ -146,3 +146,23 @@ It is similiar to dockerhub where we stored the docker images
 
 3. Run the above command one by one to build the frontend image and push to ecr repository
 ![alt text](image-5.png)
+
+4. Let’s run a container from the image
+```
+docker images -->copy the image name from the list
+```
+```
+docker run -d -p 3000:3000 three-tier-frontend:latest
+```
+```
+docker ps
+```
+
+![alt text](image-6.png)
+
+### your frontend has setup and your application is now running to see your application you could browse →`public-ip:3000`
+
+## Step 3 →Setup backend
+1. Now go to backend directory to setup backend
+
+![alt text](image-7.png)
