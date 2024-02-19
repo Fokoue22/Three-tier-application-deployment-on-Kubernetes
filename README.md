@@ -322,3 +322,15 @@ kubectl get deployment -n kube-system aws-load-balancer-controller
 ### Now your Load balancer is working let’s setup Ingress for internal routing
 
 ## Step 2 →Setup Ingress for internal routing
+1. Loacte the full_stack_lb.yaml file
+
+```
+kubectl apply -f full_stack_lb.yaml
+```
+```
+kubectl get ing -n workshop
+```
+
+2. go to your Web Browser and paste the above dns address
+
+### Congrtas !! Your application is accessible through load balancer ingress
