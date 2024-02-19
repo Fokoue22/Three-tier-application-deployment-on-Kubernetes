@@ -192,10 +192,71 @@ docker ps
 * So, in simpler terms, a namespace in Kubernetes is a way to keep different projects or applications separate and organized, making it easier to manage them in the bustling environment of a Kubernetes cluster
 
 ## Step 1 →Setup EKS Cluster and create a namespace
-Run the following command to setup EKS cluster
+1. Run the following command to setup EKS cluster
 
 ```
 eksctl create cluster --name three-tier-cluster --region us-east-1 --node-type t2.medium --nodes-min 2 --nodes-max 2
 aws eks update-kubeconfig --region us-east-1 --name three-tier-cluster
 kubectl get nodes
 ```
+
+2. It takes 15 to 20 mins to create a cluster
+
+![alt text](EKS-Cluster.png)
+
+3. on aws console search for aws cloud formation to view the events happening in creation of EKS cluster
+
+4. creating Namesapce from the following command
+
+
+## Step 2→ create a deployment and service for Frontend
+1. go to k8s_manifests directory there you will find deployment and service files for frontend
+
+
+2. you have to edit the file called frontend-deployment.yaml
+
+3. one thing you need to be changed that is your image name
+
+
+4. so, go to your ecr repo → select the frontend repo →click on view public listing and copy the image name and paste inside the frontend-deployment.yaml file
+
+Now run the following commands to create the deployment and service for frontend
+
+```
+kubectl apply -f frontend-deployment.yaml
+```
+```
+kubectl apply -f frontend-service.yaml
+```
+
+## Step 3→ create a deployment and service for Backend
+1. In the same folder you will find backend-deployment.yaml and backend-service.yaml
+2. you have to edit the file called backend-deployment.yaml
+3. one thing you need to be changed that is your image name
+4. so, go to your ecr repo → select the backend repo →click on view public listing and copy the image name and paste inside the backend-deployment.yaml file
+
+Now run the following commands to create the deployment and service backend
+
+```
+kubectl apply -f backend-deployment.yaml
+```
+```
+kubectl apply -f backend-service.yaml
+```
+```
+kubectl get pods -n workshop
+```
+
+# Now our two tier is ready that is frontend and backend let’s setup the third tier
+
+## step 4 →Setup Database tier
+1. Locate the mongo folder that stores deployment , service and secrets manifests
+
+2. Run the below commands to setup database tier
+```
+kubectl apply -f .
+```
+```
+kubectl get all
+```
+# Now your all three tiers are ready to go but how do you access them for that we have to create a application load balancer to route outside traffic towards cluster and an ingress for in internal routing between our 3 tiers
