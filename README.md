@@ -106,8 +106,9 @@ It is a command-line tool used in managing and interacting with Kubernetes clust
 ```
 snap install kubectl --classic
 ```
+![alt text](Setup-kubectl.png)
 
-### 4. setup eksctl
+### 4. Setup eksctl
 It is a command-line tool used for managing Amazon EKS (Elastic Kubernetes Service) clusters.
 
 1. To install eksctl tool run the following commands
@@ -117,3 +118,5 @@ curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/d
 sudo mv /tmp/eksctl /usr/local/bin
 eksctl version
 ```
+
+![alt text](Setup-eksctl.png)
