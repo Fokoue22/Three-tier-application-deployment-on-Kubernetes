@@ -120,3 +120,29 @@ eksctl version
 ```
 
 ![alt text](Setup-eksctl.png)
+
+
+
+# Phase 2 →Built frontend and backend images
+## Step 1 → setup Elastic container registery (ECR)
+It is similiar to dockerhub where we stored the docker images
+
+1. Go to your aws console and search for ECR
+2. click on create repository for frontend and set visiblity setting to public. Do same for  backend Repository
+
+![alt text](frontend-repo.png)
+
+![alt text](front-backend-repo.png)
+
+## Step 2 →Setup frontend
+1. In terminal go to frontend directory and run `ls` command
+
+![alt text](image-2.png)
+
+2. Go to your ecr repo and click on `view push commands`
+![alt text](image-3.png)
+
+![alt text](image-4.png)
+
+3. Run the above command one by one to build the frontend image and push to ecr repository
+![alt text](image-5.png)
