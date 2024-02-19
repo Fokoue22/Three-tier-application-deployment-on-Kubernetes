@@ -334,3 +334,27 @@ kubectl get ing -n workshop
 2. go to your Web Browser and paste the above dns address
 
 ### Congrtas !! Your application is accessible through load balancer ingress
+
+
+
+# Phase 5 →Destroy Everything
+1. On your current folder run
+
+```
+kubectl delete -f .
+```
+
+2. go to mongo folder to delete database tier
+
+```
+kubectl delete -f .
+```
+
+3. Delete the cluster and the stack of your cloud formation
+
+```
+eksctl delete cluster --name three-tier-cluster --region us-east-1
+aws cloudformation delete-stack --stack-name eksctl-three-tier-cluster-cluster
+```
+
+4. you could checkout alll the changes in cloud formation console of aws
