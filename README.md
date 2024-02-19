@@ -68,7 +68,7 @@ git clone https://github.com/Aakibgithuber/Three-tier-Application-Deployment-.gi
 
 ## Step 3 →Setup aws cli ,docker ,kubectl and eksctl
 
-### 1. configuring aws cli `AWS CLI  is a tool that allows you to interact with AWS services using commands`
+### 1. Setup aws cli `AWS CLI  is a tool that allows you to interact with AWS services using commands`
 
 Run the following commands to install aws cli
 
@@ -95,4 +95,25 @@ sudo chmod 777 /var/run/docker.sock
 ```
 ```
 which docker
+```
+![alt text](Setup-docker.png)
+![alt text](image-1.png)
+
+### 3. Setup kubectl
+It is a command-line tool used in managing and interacting with Kubernetes clusters
+
+1. To install kubectl run the following commands
+```
+snap install kubectl --classic
+```
+
+### 4. setup eksctl
+It is a command-line tool used for managing Amazon EKS (Elastic Kubernetes Service) clusters.
+
+1. To install eksctl tool run the following commands
+
+```
+curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+sudo mv /tmp/eksctl /usr/local/bin
+eksctl version
 ```
