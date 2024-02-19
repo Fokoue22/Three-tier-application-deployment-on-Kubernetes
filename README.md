@@ -212,10 +212,10 @@ kubectl get nodes
 
 ```
 kubectl create namespace workshop
-```
-```
 kubectl config set-context --current --namespace workshop
 ```
+![alt text](image-8.png)
+
 ## Step 2→ create a deployment and service for Frontend
 1. go to k8s_manifests directory there you will find deployment and service files for frontend
 
