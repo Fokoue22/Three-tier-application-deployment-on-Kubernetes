@@ -204,11 +204,18 @@ kubectl get nodes
 
 ![alt text](EKS-Cluster.png)
 
-3. on aws console search for aws cloud formation to view the events happening in creation of EKS cluster
+3. on aws console search for aws cloudformation to view the events happening in creation of EKS cluster
+
+![alt text](eks-cloudformation.png)
 
 4. creating Namesapce from the following command
 
-
+```
+kubectl create namespace workshop
+```
+```
+kubectl config set-context --current --namespace workshop
+```
 ## Step 2→ create a deployment and service for Frontend
 1. go to k8s_manifests directory there you will find deployment and service files for frontend
 
