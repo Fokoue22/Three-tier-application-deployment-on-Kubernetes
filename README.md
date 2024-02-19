@@ -170,3 +170,32 @@ docker ps
 1. Now go to backend directory to setup backend
 
 ![alt text](image-7.png)
+
+### Now your backend imge is built successfully and also pushed to Elastic container registery which we used when we create elastic kubernetes service
+
+
+# Phase 3 Kubernetes
+## 1. What is Deployment:
+* Imagine a Factory: Think of a deployment as a factory that produces and manages copies of your software applications.
+* Multiple Replicas: Just like a factory can produce multiple identical items, a deployment in Kubernetes can create and handle multiple copies (replicas) of your application.
+* Easy Updates: If you want to change or update your application, the deployment system can smoothly handle that, like swapping out parts in a factory without stopping production.
+
+## 2. what is Service:
+
+* Imagine a Reception Desk: Picture a service in Kubernetes like a reception desk in a building.
+* Central Point of Contact: The service provides a central point of contact for your applications. Instead of trying to find each application directly, other parts of your system can talk to the service, and it knows how to find the right application.
+* Stable Address: Just as you have a consistent address for the reception desk, a service has a stable address that other parts of your system can use to communicate with your applications.
+
+## 3. What is Namesapce
+
+* It’s like a labeled section within Kubernetes where you can organize and run your applications. Each namespace is like a fenced-off area where your apps can do their thing without stepping on each other’s toes.
+* So, in simpler terms, a namespace in Kubernetes is a way to keep different projects or applications separate and organized, making it easier to manage them in the bustling environment of a Kubernetes cluster
+
+## Step 1 →Setup EKS Cluster and create a namespace
+Run the following command to setup EKS cluster
+
+```
+eksctl create cluster --name three-tier-cluster --region us-east-1 --node-type t2.medium --nodes-min 2 --nodes-max 2
+aws eks update-kubeconfig --region us-east-1 --name three-tier-cluster
+kubectl get nodes
+```
