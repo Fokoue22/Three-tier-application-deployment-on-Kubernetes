@@ -160,7 +160,11 @@ docker ps
 
 ![alt text](image-6.png)
 
+![alt text](to-do-app.png)
+
 ### your frontend has setup and your application is now running to see your application you could browse →`public-ip:3000`
+# `NB` Don't forget to update your Security for the app to run 
+![alt text](update-security-group.png)
 
 ## Step 3 →Setup backend
 1. Now go to backend directory to setup backend
