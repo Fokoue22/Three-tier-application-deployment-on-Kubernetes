@@ -63,3 +63,36 @@ cd 3-tier
 git clone https://github.com/Aakibgithuber/Three-tier-Application-Deployment-.git
 ```
 ![alt text](commands.png)
+![alt text](image.png)
+
+
+## Step 3 →Setup aws cli ,docker ,kubectl and eksctl
+
+### 1. configuring aws cli `AWS CLI  is a tool that allows you to interact with AWS services using commands`
+
+Run the following commands to install aws cli
+
+```
+snap install aws-cli --classic
+```
+2. you have to configure aws by the command →
+
+```
+aws configure
+```
+3. It is asked for access key and secret key now you have to open that csv file you downloaded above and copy the access and secret key `Remain everything as it is and click enter`
+
+![alt text](Setup-aws-cli.png)
+
+### 2. Setup docker
+Run the following commands. `Don't forget to cd before running this command`
+
+```
+apt install docker.io
+usermod -aG docker $USER # Replace with your username e.g ‘ubuntu’
+newgrp docker
+sudo chmod 777 /var/run/docker.sock
+```
+```
+which docker
+```
